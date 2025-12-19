@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="../changelog.md" />
+    <File Path="../LICENSE" />
+    <File Path="../README.md" />
+    <File Path=".editorconfig" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+  </Folder>
+  <Project Path="AdventOfCode2025/AdventOfCode2025.csproj" />
+  <Project Path="AdventOfCode2025.Host/AdventOfCode2025.Host.csproj" />
+  <Project Path="AdventOfCode2025.Tests/AdventOfCode2025.Tests.csproj" />
+</Solution>
