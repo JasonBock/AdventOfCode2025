@@ -33,4 +33,37 @@ public static class SolutionDay3
 
 		return totalJoltage;
 	}
+
+	public static Int128 RunPart2(ImmutableArray<string> batteryBanks)
+	{
+		var totalJoltage = Int128.Zero;
+
+		foreach (var batteryBank in batteryBanks)
+		{
+			var maximumJoltage = Int128.Zero;
+
+			for (var firstIndex = 0; firstIndex < batteryBank.Length; firstIndex++)
+			{
+				var firstNumber = batteryBank[firstIndex];
+
+				for (var secondIndex = firstIndex + 1; secondIndex < batteryBank.Length; secondIndex++)
+				{
+
+
+
+
+					var currentJoltage = int.Parse($"{firstNumber}{batteryBank[secondIndex]}", CultureInfo.CurrentCulture);
+
+					if (currentJoltage > maximumJoltage)
+					{
+						maximumJoltage = currentJoltage;
+					}
+				}
+			}
+
+			totalJoltage += maximumJoltage;
+		}
+
+		return totalJoltage;
+	}
 }
