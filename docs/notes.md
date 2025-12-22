@@ -54,3 +54,9 @@ Factor of 3, length is 3 => 4 groups, 123, 456, 789, 012
 Root chunk = "123"
 
 Is it `46769308485`?
+
+# Day 3
+
+## Part 1
+
+Is it `17031`?
