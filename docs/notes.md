@@ -45,3 +45,12 @@ Oops, need to account for numbers larger than 99.
 538, 538, 538, 538
 
 `31000881061`
+
+## Part 2
+
+123456789012 - Length 12
+
+Factor of 3, length is 3 => 4 groups, 123, 456, 789, 012
+Root chunk = "123"
+
+Is it `46769308485`?
