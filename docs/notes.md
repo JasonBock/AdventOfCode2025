@@ -17,7 +17,6 @@ Oops, need to account for numbers larger than 99.
 ## Part 2
 `5043` - too low
 `6127` - still too low
-`6133` - yay!
 
 98, R5 => 103, which is actually 3, and I would've crossed 0
 
@@ -53,13 +52,7 @@ Oops, need to account for numbers larger than 99.
 Factor of 3, length is 3 => 4 groups, 123, 456, 789, 012
 Root chunk = "123"
 
-Is it `46769308485`?
-
 # Day 3
-
-## Part 1
-
-Is it `17031`?
 
 ## Part 2
 
@@ -113,11 +106,3 @@ So, the resulting number is `888911112111`
 
 888911112111
 888911112111
-
-Is it `168575096286051`?
-
-# Day 4
-
-## Part 1
-
-Is it `1602`?
