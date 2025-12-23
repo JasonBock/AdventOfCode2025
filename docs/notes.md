@@ -115,3 +115,9 @@ So, the resulting number is `888911112111`
 888911112111
 
 Is it `168575096286051`?
+
+# Day 4
+
+## Part 1
+
+Is it `1602`?

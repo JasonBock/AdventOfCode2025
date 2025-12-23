@@ -1,6 +1,5 @@
 ﻿using System.Collections.Immutable;
 using System.Globalization;
-using System.Linq;
 
 namespace AdventOfCode2025.Day3;
 
