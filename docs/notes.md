@@ -106,3 +106,12 @@ So, the resulting number is `888911112111`
 
 888911112111
 888911112111
+
+# Day 7
+
+## Part 1
+
+* Look at each character:
+    * '.' => If the previous one is a '|' or 'S', then change it to a '|'
+    * '|' => Do nothing
+    * '^' => If the previous one is a '|', update the split count, and change the characters to the immediate left and right to '|', assuming it's not out of bounds
