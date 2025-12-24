@@ -51,4 +51,5 @@ static async Task RunDay6Async()
 {
 	Console.WriteLine(nameof(RunDay6Async));
 	Console.WriteLine($"Part 1 = {SolutionDay6.RunPart1([.. await File.ReadAllLinesAsync("Day6Input.txt")])}");
+	Console.WriteLine($"Part 2 = {SolutionDay6.RunPart2([.. await File.ReadAllLinesAsync("Day6Input.txt")])}");
 }

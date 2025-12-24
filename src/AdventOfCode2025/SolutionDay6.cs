@@ -89,4 +89,83 @@ public static class SolutionDay6
 
 		return data;
 	}
+
+	public static BigInteger RunPart2(ImmutableArray<string> worksheet)
+	{
+		var answer = BigInteger.Zero;
+
+		var operators = new List<char>([.. worksheet[^1].Where(value => value != ' ')]);
+		var data = SolutionDay6.GetCephalopodData(worksheet[..^1]);
+
+		for (var i = 0; i < operators.Count; i++)
+		{
+			var @operator = operators[i];
+			var result = BigInteger.Zero;
+
+			if (@operator == '+')
+			{
+				foreach (var input in data[i])
+				{
+					result += input;
+				}
+			}
+			else
+			{
+				result = BigInteger.One;
+
+				foreach (var input in data[i])
+				{
+					result *= input;
+				}
+			}
+
+			answer += result;
+		}
+
+		return answer;
+	}
+
+	private static List<List<BigInteger>> GetCephalopodData(ImmutableArray<string> input)
+	{
+		var data = new List<List<BigInteger>>();
+
+		var currentValue = new List<char>();
+		var currentValues = new List<BigInteger>();
+
+		for (var i = input[0].Length - 1; i >= 0; i--)
+		{
+			for (var j = 0; j < input.Length; j++)
+			{
+				var value = input[j][i];
+
+				if (value != ' ')
+				{
+					currentValue.Add(value);
+				}
+
+				if (j == input.Length - 1)
+				{
+					if (currentValue.Count > 0)
+					{
+						currentValues.Add(BigInteger.Parse(currentValue.ToArray(), CultureInfo.CurrentCulture));
+						currentValue.Clear();
+					}
+					else
+					{
+						data.Add(currentValues);
+						currentValues = [];
+					}
+				}
+			}
+
+			if (i == 0)
+			{
+				data.Add(currentValues);
+			}
+		}
+
+		data.Reverse();
+
+		return data;
+	}
 }

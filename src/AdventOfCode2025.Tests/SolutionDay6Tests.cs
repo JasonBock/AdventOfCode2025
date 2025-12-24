@@ -18,4 +18,18 @@ public static class SolutionDay6Tests
 
 		Assert.That(SolutionDay6.RunPart1([.. input.Split(Environment.NewLine)]), Is.EqualTo(new BigInteger(4_277_556)));
 	}
+
+	[Test]
+	public static void Part2()
+	{
+		var input =
+			"""
+			123 328  51 64 
+			 45 64  387 23 
+			  6 98  215 314
+			*   +   *   +  
+			""";
+
+		Assert.That(SolutionDay6.RunPart2([.. input.Split(Environment.NewLine)]), Is.EqualTo(new BigInteger(3_263_827)));
+	}
 }
