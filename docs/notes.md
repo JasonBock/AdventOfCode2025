@@ -153,3 +153,8 @@ Different next minimal path possibilities:
 * [2, 7] - Both are in the same circuit => Do nothing:
     * Circuit 0: [2, 4, 7]
     * Circuit 1: [3, 6]
+
+# Day 9
+
+## Part 2
+General problem: does a shape exist within another shape?
