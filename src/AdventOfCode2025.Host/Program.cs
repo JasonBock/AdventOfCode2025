@@ -68,4 +68,5 @@ static async Task RunDay8Async()
 {
 	Console.WriteLine(nameof(RunDay8Async));
 	Console.WriteLine($"Part 1 = {SolutionDay8.RunPart1([.. await File.ReadAllLinesAsync("Day8Input.txt")], 1_000)}");
+	Console.WriteLine($"Part 2 = {SolutionDay8.RunPart2([.. await File.ReadAllLinesAsync("Day8Input.txt")])}");
 }
