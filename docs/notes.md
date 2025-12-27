@@ -115,3 +115,41 @@ So, the resulting number is `888911112111`
     * '.' => If the previous one is a '|' or 'S', then change it to a '|'
     * '|' => Do nothing
     * '^' => If the previous one is a '|', update the split count, and change the characters to the immediate left and right to '|', assuming it's not out of bounds
+
+## Part 2
+
+Basically, keep track of the path as you go down. When you hit a splitter, go to the left, and follow that path. Keep doing that until you get to the bottom, and print out that path. Backtrack until you get to a previous node, go right, and go down. Keep doing this until all possible paths have been traced.
+
+# Day 8
+
+## Part 1
+
+Side thought: would be nice if Linq had a `Operate()` method that would take a list of values and apply an operation to them...maybe
+Would also be nice if `HashSet<>` had a `AddRange()` method.
+
+162,817,812 and 425,690,689
+
+d = sqrt((162 - 425)^2 + (817 - 690)^2 + (812-689)^2)
+d = sqrt(69169 + 16129 + 15129)
+d = sqrt(100427)
+d = 316.902
+
+`{Point { X = 984, Y = 92, Z = 344 }}` should be in a network with 4 values, and I'm missing it.
+
+I think I'm not handling the case where the two points are in two different circuits. Those circuits need to be combined. For example, let's say:
+* Circuit 0: [2, 4, 7]
+* Circuit 1: [3, 6]
+
+Different next minimal path possibilities:
+* [1, 5] - Neither one is in an existing circuit => Create a new circuit:
+    * Circuit 0: [2, 4, 7]
+    * Circuit 1: [3, 6]
+    * Circuit 2: [1, 5]
+* [2, 5] - One is in a circuit, the other one isn't => Put the point that doesn't exist in a circuit into the circuit that has the other point:
+    * Circuit 0: [2, 4, 7, 5]
+    * Circuit 1: [3, 6]
+* [2, 3] - One is in one circuit, the other is in another => Combine 2 circuits into one:
+    * Circuit 0: [2, 4, 7, 3, 6]
+* [2, 7] - Both are in the same circuit => Do nothing:
+    * Circuit 0: [2, 4, 7]
+    * Circuit 1: [3, 6]
