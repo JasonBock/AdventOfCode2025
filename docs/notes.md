@@ -157,4 +157,4 @@ Different next minimal path possibilities:
 # Day 9
 
 ## Part 2
-General problem: does a shape exist within another shape?
+General problem: does a shape exist within another shape? I think what **might** work is to take two points, see if that area is bigger than the current maximum area, and then make sure no other points are within it.

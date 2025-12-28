@@ -1,4 +1,5 @@
 ﻿using AdventOfCode2025.Day1;
+using AdventOfCode2025.Day11;
 using AdventOfCode2025.Day2;
 using AdventOfCode2025.Day3;
 using AdventOfCode2025.Day4;
@@ -16,7 +17,8 @@ using AdventOfCode2025.Day9;
 //await RunDay6Async();
 //await RunDay7Async();
 //await RunDay8Async();
-await RunDay9Async();
+//await RunDay9Async();
+await RunDay11Async();
 
 static async Task RunDay1Async()
 {
@@ -77,4 +79,10 @@ static async Task RunDay9Async()
 {
 	Console.WriteLine(nameof(RunDay9Async));
 	Console.WriteLine($"Part 1 = {SolutionDay9.RunPart1([.. await File.ReadAllLinesAsync("Day9Input.txt")])}");
+}
+
+static async Task RunDay11Async()
+{
+	Console.WriteLine(nameof(RunDay11Async));
+	Console.WriteLine($"Part 1 = {SolutionDay11.RunPart1([.. await File.ReadAllLinesAsync("Day11Input.txt")])}");
 }
