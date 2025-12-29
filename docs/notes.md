@@ -157,4 +157,25 @@ Different next minimal path possibilities:
 # Day 9
 
 ## Part 2
-General problem: does a shape exist within another shape? I think what **might** work is to take two points, see if that area is bigger than the current maximum area, and then make sure no other points are within it.
+General problem: does a shape exist within another shape? https://stackoverflow.com/questions/217578/how-can-i-determine-whether-a-2d-point-is-within-a-polygon
+
+# Day 11
+
+## Part 2
+One possible optimization is to keep track of a parent node that led to hitting both a `dac` and a `fft`. That parent node would be the node just before we found both of them. For example:
+
+```
+svr aaa bbb ccc dac fff ggg hhh fft qqq sss out
+```
+
+In this case, we know that hitting `hhh` gives us a path that we're look for. So if we have something like this:
+
+```
+svr ttt yyy zzz ccc dac fff ggg hhh fft qqq sss out
+```
+
+We can stop at `hhh` and increment the count, because we already know that `hhh` will hit both `dac` and `fft`.
+
+...maybe? Is it possible to get to `hhh` that didn't go through `ccc`? Maybe we need to keep track of each node when we found `dac` and `fft`. Then if we run into that case again, we can stop.
+
+Side note: it would be nice for a `string` to have a `int[,] IndexesOf(char[] values)`, `int[,] IndexesOf(string[] values)`, and other "matching" overloads (maybe the return is `int[,] or int[][], I can't remember which one is prefered`). Or was it this: `int[] IndexesOf(char value)`, `int[] IndexesOf(string value)`,
